@@ -56,37 +56,6 @@ public class MainTest {
 				    }
 				}
 			}
-			
-//			webList.get(0).click();
-//			WebElement webEl = driver.findElement(By.cssSelector("#maincontent > div > div.rprt_all > div > div.afflist > h3 > a > span.ui-ncbitoggler-master-text"));
-//			webEl.click();
-//			List<WebElement> webList1 = driver.findElements(By.cssSelector(".ui-ncbi-toggler-slave.ui-ncbitoggler.ui-ncbitoggler-slave-open>li"));
-//			String output = "";
-//			for(int i=0; i<webList1.size(); i++) {
-//				String ou = webList1.get(i).getText();
-//				output += ou;
-//			}
-//			System.out.println(output);
-//			driver.navigate().back();
-//			for (int i=0; i<webList.size(); i++) {
-//				Actions builder2 = new Actions(driver);
-//				builder2.contextClick(webList.get(i)).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
-////				for(String winHandle : driver.getWindowHandles()){
-////				    if ( winHandle != mainWindow) {
-////				    	driver.switchTo().window(winHandle);
-////				    	WebElement webEl = driver.findElement(By.cssSelector("#maincontent > div > div.rprt_all > div > div.afflist > h3 > a > span.ui-ncbitoggler-master-text"));
-////				    	webEl.click();
-//////				    	for(int j=0; j<webList.size(); j++) {
-//////							String ou = webList.get(i).getText() + " ----";
-//////							output += ou;
-//////						}
-//////				    	System.out.println(output);
-//////				    	driver.close();
-//////				    	driver.switchTo().window(mainWindow);
-////				    }
-////				}
-//			}
-			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
