@@ -28,6 +28,42 @@ public class Browser {
 		driver.get(url);
 	}
 	
+	static String getJournalAndYear(WebDriver driver) {
+		WebElement journalAndYearInfo = driver.findElement(By.cssSelector(".cit"));
+		String strJournalAndYear = journalAndYearInfo.getText();
+		return strJournalAndYear==null?"No Value":strJournalAndYear;
+	}
+	
+	static String getAuthorNames(WebDriver driver) {
+		WebElement authorNames = driver.findElement(By.cssSelector(".auths"));
+		String strAuthorNames = authorNames.getText();
+		strAuthorNames = strAuthorNames.replaceAll("\\d", "");
+		return strAuthorNames==null?"No Value":strAuthorNames;
+	}
+
+	static String calculateYear(String input) {
+		String result = "Unknown";
+		if (input.contains("2")) {
+			int firstIndex = input.indexOf("2");
+			result = input.substring(firstIndex, firstIndex+4);
+		}
+		
+		return result;
+	}
+
+	static String getAuthorDetails(WebDriver driver) throws InterruptedException {
+		WebElement authorInfo = driver.findElement(By.cssSelector("#maincontent > div > div.rprt_all > div > div.afflist > h3 > a > span.ui-ncbitoggler-master-text"));
+		authorInfo.click();
+		Thread.sleep(1000);
+		List<WebElement> allAuthors = driver.findElements(By.cssSelector(".ui-ncbi-toggler-slave.ui-ncbitoggler.ui-ncbitoggler-slave-open>li"));
+		String output = "";
+		for(WebElement author : allAuthors) {
+			String ou = author.getText();
+			output += ou;
+		}
+		return output;
+	}
+	
 	static void goToCertainPage(WebDriver driver, int num) throws InterruptedException {
 		WebElement pageNumberInput = driver.findElement(By.cssSelector("#pageno"));
 		pageNumberInput.clear();
